@@ -1,0 +1,28 @@
+syntax="proto3";
+
+
+option java_multiple_files=true;
+option java_package="com.grpc.multiply";
+
+message Blocks{
+	int32 a1=1;
+	int32 b1=2;
+	int32 c1=3;
+	int32 d1=4;
+	
+    
+}
+message Request{
+	Blocks A=1;
+	Blocks B=2;
+}
+
+message Response{
+    Blocks C=1;
+}
+
+service MultiplyService{
+	rpc multiplyBlock(Request) returns (Response);	
+	rpc addBlock(Request) returns (Response);
+}
+
